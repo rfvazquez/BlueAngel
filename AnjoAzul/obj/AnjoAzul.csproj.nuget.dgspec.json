@@ -1,0 +1,77 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\renan.vazquez\\Desktop\\Renan\\Renan\\AnjoAzul\\AnjoAzul\\AnjoAzul\\AnjoAzul.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\renan.vazquez\\Desktop\\Renan\\Renan\\AnjoAzul\\AnjoAzul\\AnjoAzul\\AnjoAzul.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\renan.vazquez\\Desktop\\Renan\\Renan\\AnjoAzul\\AnjoAzul\\AnjoAzul\\AnjoAzul.csproj",
+        "projectName": "AnjoAzul",
+        "projectPath": "C:\\Users\\renan.vazquez\\Desktop\\Renan\\Renan\\AnjoAzul\\AnjoAzul\\AnjoAzul\\AnjoAzul.csproj",
+        "packagesPath": "C:\\Users\\renan.vazquez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\renan.vazquez\\Desktop\\Renan\\Renan\\AnjoAzul\\AnjoAzul\\AnjoAzul\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\renan.vazquez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://nuget.indigosoft.biz/nuget": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.NETCore.App": {
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[2.1.9, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

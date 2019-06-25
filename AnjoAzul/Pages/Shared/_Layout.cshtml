@@ -1,0 +1,99 @@
+﻿@{
+    if (!Convert.ToBoolean(ViewData["layout"].ToString()))
+    {
+        <html>
+        <head>
+            <title>@ViewData["Title"] - Anjo Azul</title>
+        </head>
+        <body>
+            @RenderBody()
+        </body>
+    </html>
+}
+else
+{
+    <!DOCTYPE html>
+    <html>
+    <head>
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>@ViewData["Title"] - Anjo Azul</title>
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <link href="~/css/main.css" rel="stylesheet" />
+
+        <environment include="Development">
+            <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+            <link rel="stylesheet" href="~/css/site.css" />
+        </environment>
+        <environment exclude="Development">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+                  asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+                  asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+            <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        </environment>
+
+
+        @RenderSection("scripts", required: false)
+    </head>
+    <body>
+
+
+        @Html.Hidden("AlterarSenhaUrl", Url.Action("AlterarSenha", "Usuario"))
+
+        <div class="top">
+            <div>
+                <img src="~/Images/list.png" class="menu" />
+                <img src="~/Images/LogoIndigo.png" class="logo" />
+                <div class="indigo" style="color:white;margin-top:10px;cursor:pointer;margin-right:30px;width:15%;" align='right' onclick="AbrirAlterarSenha()">
+                    <img src="~/Images/pass.png">  Olá @ViewBag.NomeUsuario
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-bg">
+            <div class="menu-painel">
+
+                <div class="menu-item" onclick="window.location.href='@Url.Action("Index", "Home")'">
+                    <div class="img-m"><img src="~/Images/list.png" /></div>
+                    <div class="desc-m">Meus Chamados</div>
+                </div>
+
+                <div class="menu-item" onclick="window.location.href='@Url.Action("AbrirChamados", "Chamados")'">
+                    <div class="img-m"><img src="~/Images/fatura.png" /></div>
+                    <div class="desc-m">Abrir Chamado</div>
+                </div>
+
+                <div class="menu-item" onclick="window.location.href='@Url.Action("Projeto", "Projetos")'">
+                    <div class="img-m"><img src="~/Images/dashboard.png" style=" margin-left: 2px;" /></div>
+                    <div class="desc-m">Projetos em Andamento</div>
+                </div>
+
+                <div class="menu-item logout" onclick="window.location.href='@Url.Action("Logout", "Usuario")'">
+                    <div class="img-m"><img src="~/Images/logout.png" style=" margin-left: 2px;" /></div>
+                    <div class="desc-m">Sair</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div style="clear:both;height:60px;"></div>
+
+        <div class="painel">
+
+            @*Aqui caixa de mensagens*@
+            <div class="divCenter">
+                <div id="divMsg" class="divMsg Sucesso" style="display: none">
+                    <p id="pmsg" class="TextoDivMsg">Aguarde....</p>
+                </div>
+            </div>
+            @*Aqui caixa de mensagens*@
+
+            @RenderBody()
+        </div>
+    </body>
+
+</html>
+}
+}
