@@ -1,4 +1,29 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿$(document).ready(function () {
+    $(".menu").click(function () {
+        if ($(".menu-bg").is(":visible")) {
+            $(".menu-bg").fadeOut(300);
+            $(".painel").removeClass("blur");
+        }
+        else {
+            $(".menu-bg").fadeIn(300);
+            $(".painel").addClass("blur");
+        }
+    });
 
-// Write your Javascript code.
+    $(".menu-bg").click(function () {
+        $(".painel").removeClass("blur");
+        $(".menu-bg").fadeOut(300);
+    });
+
+    $(".box-sm-c").show();
+    $(".box-m-c").show();
+    $(".box-c").show();
+    $(".box").show();
+});
+
+
+function MonstraMensagem(tipo, mensagem) {
+    $("#divMsg").attr("style", "display:block");
+    $("#divMsg").attr("class", tipo);
+    $("#pmsg").html(mensagem);
+}

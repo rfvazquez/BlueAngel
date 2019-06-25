@@ -1,45 +1,23 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["layout"] = false;
     ViewData["Title"] = "Login";
 }
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
-    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/css/login.css" rel="stylesheet" />
+<link href="~/css/login.css" rel="stylesheet" />
+<script src="~/js/login.js"></script>
 
-    <title> Login - Anjo Azul </title>
+@Html.Hidden("LoginUrl", Url.Action("Login", "Index"))
 
-</head>
-<body class="body">
-
-
-    <div class="logo"></div>
-
-    @*Aqui caixa de mensagens*@
-    <div class="divCenter">
-        <div id="divMsg" class="divMsg Sucesso" style="display: none">
-            <p id="pmsg" class="TextoDivMsg">Aguarde....</p>
-        </div>
+<div class="painelLogin">
+    <input type="text" id="login" class="text" placeholder="E-Mail" />
+    <input type="password" id="senha" class="text" placeholder="Senha" />
+    <input type="button" id="btnLogar" class="input" placeholder="Senha" value="Login" onclick="FuncaoLogin();" />
+    <br />
+    <br />
+    <div align="right">
+        <a onclick="AbreEsqueciSenha()" style="cursor:pointer"><font size="2">Esqueci minha Senha!</font></a><br />
+        <a style="cursor:pointer" onclick="window.location.href='@Url.Action("Cadastro", "Cadastro")'"><font size="2">Não sou cadastrado!</font></a>
     </div>
-    @*Aqui caixa de mensagens*@
+</div>
 
-    <div class="painelLogin">
-        <input type="text" id="login" class="text" placeholder="Usuário" />
-        <input type="password" id="senha" class="text" placeholder="Senha" />
-        <input type="button" id="btnLogar" class="input" placeholder="Senha" value="Login" onclick="FuncaoLogin();" />
-        <br />
-        <br />
-        <div align="right">
-            <a onclick="AbreEsqueciSenha()" style="cursor:pointer"><font size="2">Esqueci minha Senha!</font></a><br />
-            <a href="./Cadastro" style="cursor:pointer"><font size="2">Não sou cadastrado!</font></a>
-        </div>
-    </div>
-
-</body>
-</html>
