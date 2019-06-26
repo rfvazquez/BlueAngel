@@ -2,22 +2,47 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Login";
+    Layout = null;
 }
 
-<link href="~/css/login.css" rel="stylesheet" />
-<script src="~/js/login.js"></script>
+<html>
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/main.css" />
+    <link rel="stylesheet" href="~/css/animate.css" />
+    <link href="~/css/login.css" rel="stylesheet" />
 
-@Html.Hidden("LoginUrl", Url.Action("Login", "Index"))
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/js/login.js"></script>
+    <script src="~/js/site.js"></script>
 
-<div class="painelLogin">
-    <input type="text" id="login" class="text" placeholder="E-Mail" />
-    <input type="password" id="senha" class="text" placeholder="Senha" />
-    <input type="button" id="btnLogar" class="input" placeholder="Senha" value="Login" onclick="FuncaoLogin();" />
-    <br />
-    <br />
-    <div align="right">
-        <a onclick="AbreEsqueciSenha()" style="cursor:pointer"><font size="2">Esqueci minha Senha!</font></a><br />
-        <a style="cursor:pointer" onclick="window.location.href='@Url.Action("Cadastro", "Cadastro")'"><font size="2">Não sou cadastrado!</font></a>
+    <title>Login - Anjo Azul</title>
+</head>
+<body>
+    @Html.Hidden("LoginUrl", Url.Action("Login", "Pages"))
+
+    <div class="painelLogin">
+
+        <div style="width:100%">
+            <div id="divMsg" class="divMsg Sucesso" style="display: none">
+                <p id="pmsg" class="TextoDivMsg">Aguarde....</p>
+            </div>
+        </div>
+
+        <div class="logo"></div>
+
+        <input type="text" id="login" class="text" placeholder="E-Mail" />
+        <input type="password" id="senha" class="text" placeholder="Senha" />
+        <input type="button" id="btnLogar" class="input" placeholder="Senha" value="Login" onclick="FuncaoLogin();" />
+        <br />
+        <br />
+        <div align="right">
+            <a onclick="AbreEsqueciSenha()" style="cursor:pointer"><font size="2">Esqueci minha Senha!</font></a><br />
+            <a style="cursor:pointer" onclick="window.location.href='@Url.Action(" Cadastro", "Cadastro" )'"><font size="2">Não sou cadastrado!</font></a>
+        </div>
     </div>
-</div>
 
+</body>
+</html>

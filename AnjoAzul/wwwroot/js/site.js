@@ -26,4 +26,5 @@ function MonstraMensagem(tipo, mensagem) {
     $("#divMsg").attr("style", "display:block");
     $("#divMsg").attr("class", tipo);
     $("#pmsg").html(mensagem);
+    $("#divMsg").show(300);
 }

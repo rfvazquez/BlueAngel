@@ -13,13 +13,15 @@
         return;
     }
 
+    MonstraMensagem("wait", "Por favor, Aguarde...!");
+
     $.ajax({
         url: $("#LoginUrl").val(),
         data: pdata,
         type: 'POST',
         success: function (result) {
             if (result.indexOf("Erro") > -1) {
-                $(".error").slideDown(300);
+                MonstraMensagem("error", result);
                 return;
             }
             window.location.href = result;
