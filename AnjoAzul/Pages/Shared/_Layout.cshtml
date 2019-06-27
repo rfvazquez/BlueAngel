@@ -23,15 +23,16 @@
 <body>
 
 
-    @Html.Hidden("AlterarSenhaUrl", Url.Action("AlterarSenha", "Usuario"))
+    @Html.Hidden("AlterarSenhaUrl", Url.Action("AlterarSenha", "Pages"))
+    @Html.Hidden("LogoutUrl", Url.Action("Logout", "Pages"))
 
     <div class="top">
         <div>
             <img src="~/Images/list.png" class="menu" />
             <img src="~/Images/LogoPequeno.png" class="logo" />
 
-            <div class="indigo" style="color:white;margin-top:10px;cursor:pointer;margin-right:30px;width:15%;" align='right' onclick="AbrirAlterarSenha()">
-                <img src="~/Images/pass.png">  Olá @ViewData["Nome"]
+            <div class="userLogado" style="color:white;margin-top:10px;cursor:pointer;margin-right:30px;width:15%;" align='right' onclick="AbrirAlterarSenha()">
+                <img src="~/Images/pass.png"> Olá @ViewData["Nome"]
             </div>
         </div>
     </div>
@@ -39,22 +40,22 @@
     <div class="menu-bg">
         <div class="menu-painel">
 
-            <div class="menu-item" onclick="window.location.href='@Url.Action("Index", "Home")'">
+            <div class="menu-item" onclick="window.location.href='@Url.Action(" Index", "Home" )'">
                 <div class="img-m"><img src="~/Images/list.png" /></div>
                 <div class="desc-m">Meus Chamados</div>
             </div>
 
-            <div class="menu-item" onclick="window.location.href='@Url.Action("AbrirChamados", "Chamados")'">
+            <div class="menu-item" onclick="window.location.href='@Url.Action(" AbrirChamados", "Chamados" )'">
                 <div class="img-m"><img src="~/Images/fatura.png" /></div>
                 <div class="desc-m">Abrir Chamado</div>
             </div>
 
-            <div class="menu-item" onclick="window.location.href='@Url.Action("Projeto", "Projetos")'">
+            <div class="menu-item" onclick="window.location.href='@Url.Action(" Projeto", "Projetos" )'">
                 <div class="img-m"><img src="~/Images/dashboard.png" style=" margin-left: 2px;" /></div>
                 <div class="desc-m">Projetos em Andamento</div>
             </div>
 
-            <div class="menu-item logout" onclick="window.location.href='@Url.Action("Logout", "Usuario")'">
+            <div class="menu-item logout" onclick="Logout();">
                 <div class="img-m"><img src="~/Images/logout.png" style=" margin-left: 2px;" /></div>
                 <div class="desc-m">Sair</div>
             </div>
@@ -77,6 +78,76 @@
         @RenderBody()
 
     </div>
-</body>
 
+
+
+
+    <!-- Modal Aguarde ... -->
+    <div class="modal fade" id="divModalAguarde" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12" align="center">
+                            <table border="0" style="width:90%">
+                                <tr>
+                                    <td align="left">
+                                        <img src="~/Images/loading.gif">
+                                    </td>
+                                    <td style="width:100%;" align="center">
+                                        <h1><text id="msgAguarde">Aguarde.</text></h1>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Alterar a Senha ... -->
+    <div class="modal fade" id="divAlterarSenha" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+
+                    <div>
+                        <div id="divMsgModal" class="divMsg Sucesso" style="display: none">
+                            <p id="pmsgModal" class="TextoDivMsg">Aguarde....</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div align="Left">
+                                <div class="example-title">Alterar Senha</div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div align="right">
+                                <h4 onclick="FecharNovaSenha()" style="cursor:pointer;"><b>X</b></h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <input type="password" id="txtAntigaSenha" class="form-control" placeholder="Senha Antiga" /> <br />
+                            <input type="password" id="txtNovaSenha" class="form-control" placeholder="Nova Senha" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div align="right">
+                                <input type="button" id="btnSalvarSenha" class="btn btn-primary" onclick="SalvarNovaSenha();" value="Alterar Senha" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
 </html>

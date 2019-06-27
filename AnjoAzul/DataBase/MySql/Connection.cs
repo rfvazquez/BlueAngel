@@ -1,8 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace AnjoAzul.DataBase.MySql
 {
@@ -36,6 +33,43 @@ namespace AnjoAzul.DataBase.MySql
 
             return mySqlConnection;
         }
+
+
+        public DataBaseModel ExecuteNonQuery(string query)
+        {
+            var ret = new DataBaseModel();
+            var conn = GetMySqlConnection();
+            if (conn != null)
+            {
+                if (conn.State == System.Data.ConnectionState.Open)
+                {
+                    try
+                    {
+                        var mySqlCommand = new MySqlCommand(query, conn);
+                        mySqlCommand.ExecuteNonQuery();
+                        ret.Sucesso = true;
+                        conn.Clone();
+                    }
+                    catch (Exception ex)
+                    {
+                        ret.Sucesso = false;
+                        ret.MensagemErro = $"Erro: {ex.Message}";
+                    }
+                }
+                else
+                {
+                    ret.Sucesso = false;
+                    ret.MensagemErro = "Erro ao Abrir a Connexão com banco de dados!";
+                }
+            }
+            else
+            {
+                ret.Sucesso = false;
+                ret.MensagemErro = "Erro ao Abrir a Connexão com banco de dados!";
+            }
+            return ret;
+        }
+
 
         public DataBaseModel ExecuteMySqlQuery(string query)
         {

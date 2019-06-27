@@ -7,6 +7,51 @@ namespace AnjoAzul.DataBase.MySql
 {
     public class Query
     {
+        #region usuario
+        public DataBaseModel CriaUsuario(UsuarioModel usuario)
+        {
+            var ret = new DataBaseModel();
+            var conn = new Connection();
+            try
+            {
+                var query = $"insert into tb_usuario(usu_Nome, usu_Sobrenome, usu_Email, usu_Senha) " +
+                    $"values({usuario.Nome},{usuario.SobreNome}, {usuario.EMail}, {usuario.Senha}) ";
+                ret = conn.ExecuteNonQuery(query);
+            }
+            catch (Exception ex)
+            {
+                ret.Sucesso = false;
+                ret.MensagemErro = ex.Message;
+            }
+            return ret;
+        }
+
+
+        public DataBaseModel AlteraUsuario(UsuarioModel usuario)
+        {
+            var ret = new DataBaseModel();
+            var conn = new Connection();
+            try
+            {
+                var query = $"update tb_usuario " +
+                    $"set usu_nome = '{usuario.Nome}'," +
+                    $" usu_Sobrenome = '{usuario.SobreNome}'," +
+                    $" usu_Email = '{usuario.EMail}'," +
+                    $" usu_Senha = '{usuario.Senha}'," +
+                    $" usu_Valido = {usuario.Valido} " +
+                    $" where usu_id= {usuario.Id}";
+
+                ret = conn.ExecuteNonQuery(query);
+
+            }catch(Exception ex)
+            {
+                ret.Sucesso = false;
+                ret.MensagemErro = ex.Message;
+            }
+            return ret;
+        }
+
+
         public DataBaseModel LoginUsuario(string eMail)
         {
             var ret = new DataBaseModel();
@@ -46,5 +91,6 @@ namespace AnjoAzul.DataBase.MySql
 
             return ret;
         }
+        #endregion
     }
 }

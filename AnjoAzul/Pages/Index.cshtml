@@ -1,5 +1,5 @@
 ﻿@page
-@model IndexModel
+@model AnjoAzul.Pages.IndexModel
 @{
     ViewData["Title"] = "Login";
     Layout = null;
@@ -22,20 +22,28 @@
 </head>
 <body>
     @Html.Hidden("LoginUrl", Url.Action("Login", "Pages"))
+    @Html.Hidden("EsqueciSenhaUrl", Url.Action("EsqueciSenha", "Pages"))
+
+
+
+
+    <div>
+        <div id="divMsg" class="divMsg Sucesso" style="display: none">
+            <p id="pmsg" class="TextoDivMsg">Aguarde....</p>
+        </div>
+    </div>
+
+
 
     <div class="painelLogin">
-
-        <div style="width:100%">
-            <div id="divMsg" class="divMsg Sucesso" style="display: none">
-                <p id="pmsg" class="TextoDivMsg">Aguarde....</p>
-            </div>
-        </div>
 
         <div class="logo"></div>
 
         <input type="text" id="login" class="text" placeholder="E-Mail" />
         <input type="password" id="senha" class="text" placeholder="Senha" />
-        <input type="button" id="btnLogar" class="input" placeholder="Senha" value="Login" onclick="FuncaoLogin();" />
+        <div align="right">
+            <input type="button" id="btnLogar" class="btn btn-primary" placeholder="Senha" value="Login" onclick="FuncaoLogin();" />
+        </div>
         <br />
         <br />
         <div align="right">
@@ -43,6 +51,33 @@
             <a style="cursor:pointer" onclick="window.location.href='@Url.Action(" Cadastro", "Cadastro" )'"><font size="2">Não sou cadastrado!</font></a>
         </div>
     </div>
+
+    <!--Modal Esquici minha senha-->
+    <div class="modal fade" id="divEsqueciSenha" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+
+                    <div>
+                        <div id="divMsgModal" class="divMsg Sucesso" style="display: none">
+                            <p id="pmsgModal" class="TextoDivMsg">Aguarde....</p>
+                        </div>
+                    </div>
+
+                    <h3>Solicitar Senha</h3><br />
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <input type="text" id="txtLoginEqueci" class="text" placeholder="E-Mail" />
+                            <div align="right">
+                                <input type="button" id="btnEsqueciSenha" class="btn btn-primary" onclick="EsqueciSenha();" value="Solicitar Senha" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal Esquici minha senha-->
 
 </body>
 </html>

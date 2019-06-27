@@ -4,6 +4,12 @@ html {
     height: 100% !important;
 }
 
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 .ajuda {
     position: absolute;
@@ -86,7 +92,7 @@ body {
     margin-top: 7px;
 }
 
-.indigo {
+.userLogado {
     width: 105px;
     height: 40px;
     float: right;
@@ -346,7 +352,7 @@ body {
 /*AQUI RESPONSIVIDADE DAS TABELAS DO CÃO*/
 
 @media (max-width: 767px) {
-    .indigo {
+    .userLogado {
         width: 70px;
         height: 40px;
         float: right;

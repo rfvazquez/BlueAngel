@@ -28,3 +28,36 @@
         }
     });
 }
+
+
+function EsqueciSenha() {
+    MonstraMensagemModal("wait", "Enviando E-Mail!");
+    var pdata = {};
+    pdata["email"] = $("#txtLoginEqueci").val();
+
+    if (pdata["email"] === "") {
+        MonstraMensagemModal("error", "Campo E-Mail não pode ser Branco!");
+        return;
+    }
+
+    $.ajax({
+        url: $("#EsqueciSenhaUrl").val(),
+        data: pdata,
+        type: 'POST',
+        success: function (result) {
+            if (result.includes("Erro")) {
+                MonstraMensagemModal("error", result);
+                return;
+            } else {
+                $("#divEsqueciSenha").modal('hide');
+                MonstraMensagem("wait", result);
+                return;
+            }
+        }
+    });
+}
+
+
+function AbreEsqueciSenha() {
+    $("#divEsqueciSenha").modal();
+}
