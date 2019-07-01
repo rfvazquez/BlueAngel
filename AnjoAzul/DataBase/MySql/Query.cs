@@ -15,7 +15,7 @@ namespace AnjoAzul.DataBase.MySql
             try
             {
                 var query = $"insert into tb_usuario(usu_Nome, usu_Sobrenome, usu_Email, usu_Senha) " +
-                    $"values({usuario.Nome},{usuario.SobreNome}, {usuario.EMail}, {usuario.Senha}) ";
+                    $"values('{usuario.Nome}','{usuario.SobreNome}','{usuario.EMail}','{usuario.Senha}') ";
                 ret = conn.ExecuteNonQuery(query);
             }
             catch (Exception ex)

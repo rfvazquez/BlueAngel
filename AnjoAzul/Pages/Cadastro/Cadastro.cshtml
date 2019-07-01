@@ -1,15 +1,62 @@
 ﻿@page
 @model AnjoAzul.Pages.CadastroModel
 @{
-    ViewData["Title"] = "Cadastro";
+    Layout = null;
 }
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/main.css" />
+    <link rel="stylesheet" href="~/css/animate.css" />
     <script src="~/js/cadastro.js"></script>
-<div class="row">
-    <div class="col-sm-12">
-        <div class="box" style="display:none;">
-            <h4 class="example-title">Cadastro Usuários</h4>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/js/site.js"></script>
+</head>
+<body>
 
 
+    @Html.Hidden("CadastroUrl", Url.Action("RealizaCadastro", "Cadastro"))
+
+
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="box" style="display:none;">
+                <div align="center">
+                    <div style="width:50%">
+                        <h4 class="example-title">Cadastro Usuários</h4>
+
+                        <h6 class="example-title" align="left">Primeiro Nome:</h6>
+                        <input type="text" class="form-control" aria-label="Default" id="txtNome"
+                               placeholder="Primeiro Nome" />
+
+                        <h6 class="example-title" align="left">Sobrenome:</h6>
+                        <input type="text" class="form-control" aria-label="Default" id="txtSobrenome"
+                               placeholder="Sobrenome" />
+
+                        <h6 class="example-title" align="left">Senha:</h6>
+                        <input type="password" class="form-control" aria-label="Default" id="txtSenha"
+                               placeholder="Insira uma Senha" onkeyup="forçaSenha();" />
+                        <br>
+                        <div id="forçaSenha" style="height:4px;"></div>
+
+                        <h6 class="example-title" align="left">Confirmação de Senha:</h6>
+                        <input type="password" class="form-control" aria-label="Default" id="txtConfirmaSenha"
+                               placeholder="Confirme sua Senha" />
+
+                        <h6 class="example-title" align="left">Email:</h6>
+                        <input type="email" class="form-control" aria-label="Default" id="txtEmail" placeholder="E-mail" />
+
+                        <br>
+                        <button style="width:50%" class="btn btn-primary" type="button" id="btnCadastro" onclick="cadastroUsuario();">Cadastrar</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</body>
+</html>
