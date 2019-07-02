@@ -1,0 +1,125 @@
+﻿@page
+@model AnjoAzul.Pages.Cadastro.CadastroPacienteModel
+@{
+    ViewData["Title"] = "Cadastro Pacientes";
+}
+
+    <script src="~/js/cadastroPaciente.js"></script>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="box" style="display:none;">
+            <div class="example-title">Cadastro Pacientes</div>
+
+            <!--aqui dados pessoais-->
+            <div class="col-sm-6" style="height:350px">
+                <div class="box" style="display:none;">
+                    <div class="example-title">Informações Pessoais</div>
+                    <div class="col-sm-12">
+                        <h6 class="example-title" align="left">Primeiro Nome:</h6>
+                        <input type="text" class="form-control" aria-label="Default" id="txtNome" placeholder="Primeiro Nome" />
+                        <h6 class="example-title" align="left">Sobrenome:</h6>
+                        <input type="text" class="form-control" aria-label="Default" id="txtSobrenome" placeholder="Sobrenome" />
+                        <h6 class="example-title" align="left">Data Nascimento</h6>
+                        <input type="Date" class="form-control" aria-label="Default" id="txtDtNascimento" />
+                        <h6 class="example-title" align="left">Responsável:</h6>
+                        <select id="txtResponsavel" class="form-control"></select>
+                    </div>
+                </div>
+            </div>
+
+            <!--aqui dados do endereço-->
+            <div class="col-sm-6" style="height:350px">
+                <div class="box" style="display:none;">
+                    <div class="example-title">Endereço</div>
+                    <div class="col-sm-4">
+                        <h6 class="example-title" align="left">CEP:</h6>
+                        <input type="text" class="form-control" aria-label="Default" id="txtCep" placeholder="CEP" data-mask="00000-000" />
+                    </div>
+                    <div class="col-sm-2">
+                        <h6 class="example-title" align="left">&nbsp;</h6>
+                        <img src="~/images/checkPq.png" onclick="BuscaCEP();" style="cursor:pointer"/>
+                    </div>
+                    <div class="col-sm-10">
+                        <h6 class="example-title" align="left">Endereço:</h6>
+                        <input type="text" class="form-control" aria-label="Default" id="txtEndereco" placeholder="Endereço" />
+                    </div>
+                    <div class="col-sm-2">
+                        <h6 class="example-title" align="left">Número</h6>
+                        <input type="text" class="form-control" aria-label="Default" id="txtNumero" />
+                    </div>
+
+                    <div style="clear:both;height:1px;"></div> <!--Pular linha-->
+
+                    <div class="col-sm-6">
+                        <h6 class="example-title" align="left">Complemento</h6>
+                        <input type="text" class="form-control" aria-label="Default" id="txtComplemento" placeholder="Complemento" />
+                    </div>
+                    <div class="col-sm-6">
+                        <h6 class="example-title" align="left">Bairro</h6>
+                        <input type="text" class="form-control" aria-label="Default" id="txtBairro" placeholder="Bairro" />
+                    </div>
+                    <div class="col-sm-10   ">
+                        <h6 class="example-title" align="left">Cidade</h6>
+                        <input type="text" class="form-control" aria-label="Default" id="txtCidade" placeholder="Cidade" />
+                    </div>
+                    <div class="col-sm-2">
+                        <h6 class="example-title" align="left">Estado</h6>
+                        <select id="txtEstado" class="form-control">
+                            <option value="SP">SP</option>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12">
+        <div class="box" style="display:none;">
+
+            <div class="col-sm-12">
+                <div class="box" style="display:none;">
+                    <h6 class="example-title" align="left">Mais sobre mim:</h6>
+                    <textarea name="txtPoucoMais" cols="40" rows="5" class="form-control"></textarea>
+
+
+                    <div style="clear:both;height:10px;"></div>
+                    <div class="col-sm-6">
+                        <div class="box" style="display:none;">
+                            <div class="example-title">Minhas habilidades</div>
+                            <div class="col-sm-10">
+                                <h6 class="example-title" align="left">Habilidade:</h6>
+                                <input type="text" class="form-control" aria-label="Default" id="txtHabilidade" placeholder="Habilidade" />
+                            </div>
+                            <div class="col-sm-2">
+                                <h6 class="example-title" align="left">&nbsp;</h6>
+                                <img src="~/images/plus.png">
+                            </div>
+                            <div style="clear:both;height:5px;"></div>
+                            <div class="col-sm-12">
+                                <textarea name="areaHabilidades" cols="40" rows="5" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="box" style="display:none;">
+                            <div class="example-title">Minhas dificuldades</div>
+                            <div class="col-sm-10">
+                                <h6 class="example-title" align="left">Dificuldades:</h6>
+                                <input type="text" class="form-control" aria-label="Default" id="txtDificuldades" placeholder="Dificuldades" />
+                            </div>
+                            <div class="col-sm-2">
+                                <h6 class="example-title" align="left">&nbsp;</h6>
+                                <img src="~/images/plus.png">
+                            </div>
+                            <div style="clear:both;height:5px;"></div>
+                            <div class="col-sm-12">
+                                <textarea name="areaDificuldades" cols="40" rows="5" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

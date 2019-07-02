@@ -14,6 +14,8 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="~/js/site.js"></script>
+
+    <title> Cadastro - Anjo Azul </title>
 </head>
 <body>
 
@@ -21,7 +23,22 @@
     @Html.Hidden("CadastroUrl", Url.Action("RealizaCadastro", "Cadastro"))
 
 
+    <div class="top">
+        <div>
+            <img src="~/Images/LogoPequeno.png" class="logo" />
+        </div>
+    </div>
+    
 
+    <div style="clear:both;height:60px;"></div>
+
+    @*Aqui caixa de mensagens*@
+    <div class="divCenter">
+        <div id="divMsg" class="divMsg Sucesso" style="display: none">
+            <p id="pmsg" class="TextoDivMsg">Aguarde....</p>
+        </div>
+    </div>
+    @*Aqui caixa de mensagens*@
 
     <div class="row">
         <div class="col-sm-12">

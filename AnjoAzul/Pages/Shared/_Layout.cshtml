@@ -12,9 +12,12 @@
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/css/main.css" />
     <link rel="stylesheet" href="~/css/animate.css" />
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    
     <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="~/js/site.js"></script>
+
 
 
     @RenderSection("scripts", required: false)
@@ -39,9 +42,9 @@
     <div class="menu-bg">
         <div class="menu-painel">
 
-            <div class="menu-item" onclick="window.location.href='@Url.Action(" Index", "Home" )'">
-                <div class="img-m"><img src="~/Images/list.png" /></div>
-                <div class="desc-m">Meus Chamados</div>
+            <div class="menu-item" onclick="window.location.href='@Url.Action("CadastroPaciente", "Cadastro" )'">
+                <div class="img-m"><img src="~/Images/campanha.png" /></div>
+                <div class="desc-m">Pacientes</div>
             </div>
 
             <div class="menu-item" onclick="window.location.href='@Url.Action(" AbrirChamados", "Chamados" )'">
@@ -75,6 +78,10 @@
         @*Aqui caixa de mensagens*@
 
         @RenderBody()
+
+        <script src="~/lib/mask/jquery.mask.js"></script>
+        <script src="~/lib/mask/qunit.js"></script>
+        <link href="~/lib/mask/qunit.css" rel="stylesheet" />
 
     </div>
 

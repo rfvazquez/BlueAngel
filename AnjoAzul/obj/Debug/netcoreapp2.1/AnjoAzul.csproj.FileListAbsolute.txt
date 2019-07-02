@@ -90,3 +90,4 @@ C:\Users\RAFAELNUNESVAZQUEZ\Documents\Blue Angel\BlueAngel\AnjoAzul\obj\Debug\ne
 C:\Users\RAFAELNUNESVAZQUEZ\Documents\Blue Angel\BlueAngel\AnjoAzul\obj\Debug\netcoreapp2.1\AnjoAzul.dll
 C:\Users\RAFAELNUNESVAZQUEZ\Documents\Blue Angel\BlueAngel\AnjoAzul\obj\Debug\netcoreapp2.1\AnjoAzul.pdb
 C:\Users\RAFAELNUNESVAZQUEZ\Documents\Blue Angel\BlueAngel\AnjoAzul\obj\Debug\netcoreapp2.1\AnjoAzul.csproj.CopyComplete
+C:\Users\renan.vazquez\Desktop\Renan\Renan\AnjoAzul\AnjoAzul\BlueAngel\AnjoAzul\obj\Debug\netcoreapp2.1\Razor\Pages\Cadastro\CadastroPaciente.g.cshtml.cs
